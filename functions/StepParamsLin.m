@@ -70,7 +70,7 @@ function sim_struct = build_sim_struct(self)
     
     % Add a non-empty MPC problem, just so the simulink simulation
     % wont complain.
-    mpcProb1 = condensedMPCprob(self.sys, 2, self.Q, self.Q, 100); 
+    mpcProb1 = condensedMPCprob_OA(self.sys, 2, self.Q, self.Q, 100); 
     
     sim_struct = struct('PLANT', self.plant, 'trun', self.trun, 'mpcProb1', mpcProb1,...
                         'du_max', self.du_max, 'mpc_on', false,...
